@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starfall Spires — a real-time 3D card battler</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="game-container"></div>
+<div id="hud" class="hidden"></div>
+
+<div id="title-screen" class="overlay">
+  <div class="panel titlepanel">
+    <div class="gametitle">STARFALL SPIRES</div>
+    <div class="gamesub">A real-time card battler on a floating arena. Spend starlight, deploy crystal
+      constructs, and raze the Umbral keep before yours falls.</div>
+    <div class="howto">
+      <span><b>Goal:</b> destroy the enemy keep, or hold more crowns when time runs out.</span>
+      <span><b>Play:</b> click a card (or press 1–4), then click your half of the arena. Spells land anywhere.</span>
+      <span><b>Keys:</b> 1–4 select a card · P pause · R restart · M mute · Esc cancel / pause.</span>
+    </div>
+    <div class="decklabel">CHOOSE YOUR DECK</div>
+    <div id="deck-list"></div>
+    <button id="start-btn" class="bigbtn">ENTER THE ARENA</button>
+  </div>
+</div>
+
+<div id="pause-screen" class="overlay hidden">
+  <div class="panel">
+    <div class="endtitle">PAUSED</div>
+    <div class="endsub">The spires wait.</div>
+    <div class="btnrow">
+      <button id="resume-btn" class="bigbtn">RESUME</button>
+      <button id="restart-btn" class="bigbtn ghost">RESTART</button>
+      <button id="quit-btn" class="bigbtn ghost">CHANGE DECK</button>
+    </div>
+  </div>
+</div>
+
+<div id="end-screen" class="overlay hidden">
+  <div class="panel">
+    <div id="end-title" class="endtitle win">VICTORY</div>
+    <div id="end-sub" class="endsub"></div>
+    <div class="stats">
+      <div class="stat"><span class="statnum" id="stat-time">0:00</span><span class="statlabel">MATCH TIME</span></div>
+      <div class="stat"><span class="statnum" id="stat-crowns">0 — 0</span><span class="statlabel">CROWNS</span></div>
+      <div class="stat"><span class="statnum" id="stat-deployed">0</span><span class="statlabel">CARDS PLAYED</span></div>
+      <div class="stat"><span class="statnum" id="stat-damage">0</span><span class="statlabel">TOWER DAMAGE</span></div>
+    </div>
+    <div class="btnrow">
+      <button id="again-btn" class="bigbtn">PLAY AGAIN</button>
+      <button id="decks-btn" class="bigbtn ghost">CHANGE DECK</button>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="src/config.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/sim.js"></script>
+<script src="src/ai.js"></script>
+<script src="src/render.js"></script>
+<script src="src/input.js"></script>
+<script src="src/ui.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
